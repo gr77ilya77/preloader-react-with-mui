@@ -10,7 +10,7 @@ function App() {
                 Centered element
 
             </AppBarCustom>
-            <Preloader/>
+            <Preloader weight={10} size={100}/>
         </div>
     );
 }

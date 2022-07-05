@@ -8,11 +8,8 @@ const useStyles = makeStyles({
     },
     root: {
         position: 'relative',
-        height: '100px',
-        width: '100px',
         // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
         background: 'conic-gradient(from 180deg at 50% 50%, #3D9ECC 0deg, rgba(225, 245, 254, 0.07) 360deg);',
-        borderRadius: 100,
         transform: 'rotate(-90deg)',
         animation: '$animationPreload 4s linear infinite',
         // animationName: '$animationPreload',
@@ -34,19 +31,23 @@ const useStyles = makeStyles({
 });
 
 
-function Preloader({weight = 20}) {
+const Preloader = ({weight = 20, size = 100}) => {
     const classes = useStyles();
-    const size = 100;
     const maxWeight = size / 2;
     const wght = weight >= maxWeight ? maxWeight : weight;
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} style={{
+            borderRadius: `${size}px`,
+            height: `${size}px`,
+            width: `${size}px`,
+        }}>
             <span className={classes.cirlce} style={{
                 top: `${wght}px`,
                 left: `${wght}px`,
                 height: `${size - 2 * wght}px`,
                 width: `${size - 2 * wght}px`,
+                borderRadius: `${size}px`
             }
             }/>
         </div>
