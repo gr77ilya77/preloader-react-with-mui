@@ -1,7 +1,7 @@
 import React from 'react';
 import AppBarCustom from "./AppBar/";
 import './App.css';
-import Preloader from "../Preloader";
+import Preloader from "../ui/Preloader";
 
 function App() {
     return (
