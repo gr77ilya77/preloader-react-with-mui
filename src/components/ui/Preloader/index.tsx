@@ -21,10 +21,6 @@ const useStyles = makeStyles({
     },
     cirlce: {
         position: 'absolute',
-        // top: '5px',
-        // left: '5px',
-        // height: '90px',
-        // width: '90px',
         background: 'white',
         borderRadius: 100,
     }
