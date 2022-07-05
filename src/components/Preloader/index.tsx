@@ -24,21 +24,31 @@ const useStyles = makeStyles({
     },
     cirlce: {
         position: 'absolute',
-        top: '5px',
-        left: '5px',
-        height: '90px',
-        width: '90px',
+        // top: '5px',
+        // left: '5px',
+        // height: '90px',
+        // width: '90px',
         background: 'white',
         borderRadius: 100,
     }
 });
 
 
-function Preloader() {
+function Preloader({weight = 20}) {
     const classes = useStyles();
+    const size = 100;
+    const maxWeight = size / 2;
+    const wght = weight >= maxWeight ? maxWeight : weight;
+
     return (
         <div className={classes.root}>
-            <span className={classes.cirlce}></span>
+            <span className={classes.cirlce} style={{
+                top: `${wght}px`,
+                left: `${wght}px`,
+                height: `${size - 2 * wght}px`,
+                width: `${size - 2 * wght}px`,
+            }
+            }/>
         </div>
     );
 
